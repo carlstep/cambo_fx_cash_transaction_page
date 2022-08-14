@@ -24,7 +24,6 @@ class _CashTransactionPageState extends State<CashTransactionPage> {
             ),
             Center(
               child: Container(
-                alignment: Alignment.center,
                 //TODO - section for entry of billAmount
                 // 1 - based on input value, determine if USD or KHR
                 // 2 - convert input value to alternate currency and display in billAmount2
@@ -45,7 +44,7 @@ class _CashTransactionPageState extends State<CashTransactionPage> {
                       child: Padding(
                         padding: EdgeInsets.zero,
                         child: SizedBox(
-                          height: 60,
+                          height: 80,
                           width: 280,
                           child: TextField(
                             textAlign: TextAlign.start,
@@ -130,11 +129,11 @@ class _CashTransactionPageState extends State<CashTransactionPage> {
                 //shape: BoxShape.rectangle,
                 color: Colors.blue[200],
               ),
-              child: Text(
+              child: const Text(
                 'billPaymentDifference - section',
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Container(
@@ -145,11 +144,11 @@ class _CashTransactionPageState extends State<CashTransactionPage> {
                 //shape: BoxShape.rectangle,
                 color: Colors.green[200],
               ),
-              child: Text(
+              child: const Text(
                 'paymentAmount - section',
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Container(
@@ -160,7 +159,7 @@ class _CashTransactionPageState extends State<CashTransactionPage> {
                 //shape: BoxShape.rectangle,
                 color: Colors.grey[200],
               ),
-              child: Text(
+              child: const Text(
                 'In App Advert - section',
               ),
             ),
