@@ -15,7 +15,24 @@ class _CashTransactionPageState extends State<CashTransactionPage> {
       appBar: AppBar(
         title: const Text('Cash Transactions'),
       ),
-      body: Center(),
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: const [
+              TextField(
+                decoration: InputDecoration(
+                  enabledBorder:
+                      OutlineInputBorder(borderSide: BorderSide(width: 2)),
+                ),
+              ),
+              SizedBox(height: 20),
+              Text('display output'),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
