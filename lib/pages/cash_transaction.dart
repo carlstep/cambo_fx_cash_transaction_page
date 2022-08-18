@@ -9,6 +9,7 @@ class CashTransactionPage extends StatefulWidget {
 }
 
 class _CashTransactionPageState extends State<CashTransactionPage> {
+  String billValue = '';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,15 +21,23 @@ class _CashTransactionPageState extends State<CashTransactionPage> {
           padding: const EdgeInsets.all(20.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
+            children: <Widget>[
               TextField(
                 decoration: InputDecoration(
                   enabledBorder:
                       OutlineInputBorder(borderSide: BorderSide(width: 2)),
                 ),
+                onChanged: (String billAmount) {
+                  setState(() {
+                    var billValue = double.parse(billAmount);
+                    print('text => $billAmount');
+                    print(billValue.runtimeType);
+                  });
+                },
               ),
               SizedBox(height: 20),
-              Text('display output'),
+              Text('This is the output - $billValue'),
+              //Text(value),
             ],
           ),
         ),
