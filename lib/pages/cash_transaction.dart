@@ -9,7 +9,7 @@ class CashTransactionPage extends StatefulWidget {
 }
 
 class _CashTransactionPageState extends State<CashTransactionPage> {
-  String billValue = '';
+  double billValue = 0.0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,20 +23,25 @@ class _CashTransactionPageState extends State<CashTransactionPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               TextField(
-                decoration: InputDecoration(
-                  enabledBorder:
-                      OutlineInputBorder(borderSide: BorderSide(width: 2)),
+                decoration: const InputDecoration(
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(width: 2),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.grey),
+                  ),
+                  border: OutlineInputBorder(),
                 ),
                 onChanged: (String billAmount) {
                   setState(() {
-                    var billValue = double.parse(billAmount);
+                    billValue = double.parse(billAmount);
                     print('text => $billAmount');
                     print(billValue.runtimeType);
                   });
                 },
               ),
               SizedBox(height: 20),
-              Text('This is the output - $billValue'),
+              Text('This is the output - ${billValue * 4000.roundToDouble()}'),
               //Text(value),
             ],
           ),
