@@ -23,6 +23,7 @@ class _CashTransactionPageState extends State<CashTransactionPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               TextField(
+                keyboardType: TextInputType.numberWithOptions(decimal: true),
                 decoration: const InputDecoration(
                   enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(width: 2),
